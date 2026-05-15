@@ -8,11 +8,8 @@ Proyecto web de **Gestión del Conocimiento** para el **Régimen Simple de Tribu
 
 ## Enlace al repositorio GitHub (entrega)
 
-> **Sustituye esta línea** por la URL pública de tu repositorio cuando lo crees en GitHub, por ejemplo:  
-> `https://github.com/tu-usuario/tu-repo-rst-landing`
-
 ```text
-[PEGA_AQUÍ_EL_LINK_DE_TU_REPOSITORIO_PUBLICO]
+[https://github.com/Truder3105/CHAT-BOT-REGIMEN-SIMPLE-DE-TRIBUTACION]
 ```
 
 **Qué debe contener el repositorio público**
@@ -33,7 +30,7 @@ Proyecto web de **Gestión del Conocimiento** para el **Régimen Simple de Tribu
 | Integrado en el proyecto web              | Widget flotante **«Chat IA»** (`chatbot/chatbot.js` + `chatbot/chatbot.css`), montado desde `app.js` en `#rst-chatbot-root` en `index.html`.                    |
 | Interacción básica con el usuario         | Envío de mensajes, historial de turnos, botón **Enviar**, indicador de escritura, teclado.                                                                      |
 | Respuestas en **español e inglés**        | Selector **ES / EN** en la cabecera del chat; `buildSystemPrompt` en `chatbot/prompt-builder.js` fija reglas de idioma; textos de UI bilingües en `chatbot.js`. |
-| Comunicación por interfaz web             | Panel de chat, formulario, accesibilidad básica (`aria-*`, `role="dialog"`).                                                                                    |
+| Comunicación por interfaz web             | Panel de chat, formulario, accesibilidad básica (`aria-`*, `role="dialog"`).                                                                                    |
 | Funcionamiento en el entorno del proyecto | Ejecución con Live Server o cualquier servidor estático sobre la carpeta `rst-landing`; módulos ES6; sin build obligatorio.                                     |
 
 
@@ -169,7 +166,7 @@ El HTML **no** lee `.env` directamente; solo aplica si implementas servidor.
 
 1. Clona el repositorio o copia la carpeta `rst-landing`.
 2. En VS Code: **File → Open Folder** → selecciona `**rst-landing`**.
-3. Copia `config.local.example.js` → `**config.local.js**` y pega tu clave de [Google AI Studio](https://aistudio.google.com/app/apikey).
+3. Copia `config.local.example.js` → `**config.local.js`** y pega tu clave de [Google AI Studio](https://aistudio.google.com/app/apikey).
 4. Abre `index.html` con **Live Server** (o `npx serve rst-landing`).
 5. Usa el botón **«Chat IA»**; prueba **ES / EN** y preguntas sobre RST / facturación / filosofía.
 
@@ -198,5 +195,4 @@ Ver secciones anteriores del README (cuadro de causas y pruebas manuales). Si Ge
 
 ## Universidad de Cundinamarca
 
-Proyecto académico — Gestión del Conocimiento y fundamentos de deep learning (integración de chatbot e IA en la web).#   C H A T - B O T - R E G I M E N - S I M P L E - D E - T R I B U T A C I O N  
- 
+Proyecto académico — Gestión del Conocimiento y fundamentos de deep learning (integración de chatbot e IA en la web).
