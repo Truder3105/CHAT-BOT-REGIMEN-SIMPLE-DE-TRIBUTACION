@@ -1,396 +1,154 @@
-Sistema RST — Landing + Chatbot (Gestión del Conocimiento)
+# Sistema RST — Landing + Chatbot (Gestión del Conocimiento)
 
-Proyecto web de Gestión del Conocimiento para el Régimen Simple de Tributación (RST) en Colombia, con chatbot multilingüe (español / inglés) integrado en la interfaz mediante Google Gemini API (REST), modo local de respaldo con base de conocimiento en JavaScript, e integración de la Declaración Persona Transhumana (visible y funcional).
+Proyecto web de **Gestión del Conocimiento** para el **Régimen Simple de Tributación (RST)** en Colombia, con **chatbot multilingüe** (español / inglés) integrado mediante **Google Gemini API** (REST), **modo local de respaldo** con base de conocimiento en JavaScript, e integración de la **Declaración Persona Transhumana**.
 
 **Universidad de Cundinamarca** — Fundamentos Deep Learning / integración de IA en desarrollos web.
 
+**Repositorio:** [github.com/Truder3105/CHAT-BOT-REGIMEN-SIMPLE-DE-TRIBUTACION](https://github.com/Truder3105/CHAT-BOT-REGIMEN-SIMPLE-DE-TRIBUTACION)
+
 ---
 
-## Enlace al repositorio GitHub (entrega)
+## Contenido del repositorio (entrega)
+
+- Código fuente de **`rst-landing/`** (landing + chatbot).
+- Este **README** (tecnologías, arquitectura, ejecución, variables).
+- **No** subir `config.local.js` ni `.env` con secretos (`.gitignore`). Sí versionar `config.local.example.js` y `.env.example`.
+
+---
+
+## Cumplimiento con la rúbrica
+
+### 1. Integración del chatbot
+
+| Requisito | Evidencia |
+|-----------|-----------|
+| Integrado en el proyecto web | Widget **Chat IA** en `chatbot/chatbot.js`, estilos en `chatbot/chatbot.css`, montaje desde `app.js` en `#rst-chatbot-root` (`index.html`). |
+| Interacción básica | Mensajes, historial, botón Enviar, indicador de carga. |
+| Español e inglés | Selector **ES / EN**; `chatbot/prompt-builder.js` define idioma; textos UI en `chatbot.js`. |
+| Interfaz web | Panel, input, roles ARIA y `dialog`. |
+| Entorno del proyecto | Live Server o servidor estático sobre `rst-landing/`; ES modules; sin build obligatorio. |
+
+### 2. Tecnologías (ejemplos del curso / investigación)
+
+| Enunciado | Uso aquí |
+|-----------|----------|
+| APIs cloud / IA | **Google Gemini API** — `ListModels`, `generateContent`, `systemInstruction`. |
+| JavaScript | Cliente, módulos ES, `fetch`, DOM. |
+| HTML5 / CSS3 | `index.html`, `style.css`, responsive. |
+| Servicios cloud | Documentación **AWS** en la landing; clave desde **Google AI Studio**. |
+
+### 3. Declaración Persona Transhumana
+
+Cita institucional y valores (ética, autonomía, bienestar, etc.):
+
+| Forma de integración | Ubicación |
+|---------------------|-----------|
+| Mensaje inicial del chat | Bienvenida en `chatbot/chatbot.js` (ES/EN). |
+| Módulo reflexivo | Botón *Módulo reflexivo* / *Reflective prompt*. |
+| Sección informativa | `#filosofia` en `index.html`, estilos en `style.css`. |
+| Contexto del modelo | `knowledge-base/persona-transhumana.js` + `prompt-builder.js`. |
+| Componente visual | Chips y cita en landing y chat. |
+
+### 4. README (GitHub)
+
+Este archivo cubre: tecnologías, arquitectura, instrucciones de ejecución y variables.
+
+### 5. Video técnico en inglés (guion sugerido)
+
+1. **Goal:** Landing de gestión del conocimiento para RST y contexto DIAN (Colombia).
+2. **Stack:** HTML5, CSS3, ES modules, Gemini REST.
+3. **Pipeline:** `chatbot.js` → `prompt-builder.js` → `chatbot.service.js` (clave, modelos de texto, `generateContent`) → `chatbot-fallback.service.js` si falla la API.
+4. **Knowledge base:** `knowledge-base/*.js` vía `index.js`.
+5. **Security:** clave en `config.local.js` (no en Git); producción con proxy backend.
+6. **Demo:** ES/EN, pregunta on-topic, módulo reflexivo, modo local si hay cuota.
+
+---
+
+## Arquitectura general
 
 ```text
-[https://github.com/Truder3105/CHAT-BOT-REGIMEN-SIMPLE-DE-TRIBUTACION]
+┌──────────────────────────────────────────┐
+│  Navegador                                │
+│  index.html + style.css                   │
+│         │                                 │
+│         ▼                                 │
+│  app.js (navbar, reveal, formulario…)   │
+│         │                                 │
+│         ├── components/*.js               │
+│         └── chatbot/ + services/          │
+│              Gemini API (HTTPS)          │
+└──────────────────────────────────────────┘
 ```
 
-**Qué debe contener el repositorio público**
+- **Frontend estático:** el chat llama a Gemini desde el navegador (demo académica). En producción, usar **proxy** para ocultar la API key.
+- **Modo local:** si la API falla, `chatbot-fallback.service.js` usa `knowledge-base/`.
 
-- Código fuente completo de la carpeta `rst-landing/` (o de este repo si la raíz es la carpeta del curso).
-- Este `README.md` con tecnologías, arquitectura, instrucciones de ejecución y variables.
-- **No** subas `config.local.js` ni `.env` con claves (están en `.gitignore`). Sí sube `config.local.example.js` y `.env.example` como plantillas.
+### Estructura de carpetas
+
+```text
+rst-landing/
+├── index.html
+├── style.css
+├── app.js
+├── config.sample.js
+├── config.local.example.js
+├── .env.example
+├── .gitignore
+├── README.md
+├── assets/
+├── components/
+├── services/
+├── chatbot/
+└── knowledge-base/
+```
 
 ---
 
-## Cumplimiento con la rúbrica del profesor
+## Tecnologías (resumen)
 
-### 1. Integración del chatbot (funcional en el proyecto web)
+- HTML5, CSS3, **JavaScript (ES modules)**
+- **Google Gemini API** (REST)
+- Fuentes: Syne, DM Sans, JetBrains Mono (Google Fonts)
+- **Git** + `.gitignore`
 
+---
 
-| Requisito                                 | Evidencia en el proyecto                                                                                                                                        |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Integrado en el proyecto web              | Widget flotante **«Chat IA»** (`chatbot/chatbot.js` + `chatbot/chatbot.css`), montado desde `app.js` en `#rst-chatbot-root` en `index.html`.                    |
-| Interacción básica con el usuario         | Envío de mensajes, historial de turnos, botón **Enviar**, indicador de escritura, teclado.                                                                      |
-| Respuestas en **español e inglés**        | Selector **ES / EN** en la cabecera del chat; `buildSystemPrompt` en `chatbot/prompt-builder.js` fija reglas de idioma; textos de UI bilingües en `chatbot.js`. |
-| Comunicación por interfaz web             | Panel de chat, formulario, accesibilidad básica (`aria-`*, `role="dialog"`).                                                                                    |
-| Funcionamiento en el entorno del proyecto | Ejecución con Live Server o cualquier servidor estático sobre la carpeta `rst-landing`; módulos ES6; sin build obligatorio.                                     |
+## Variables y configuración
 
+| Archivo | Descripción |
+|---------|-------------|
+| **`config.local.js`** (crear tú; no subir con clave) | `window.__RST_CONFIG__.GEMINI_API_KEY = "AIza…"`; opcional `GEMINI_MODEL` (solo modelos de **texto**, nunca `*-tts`). |
+| `config.sample.js` | Valores por defecto; se importa antes de `config.local.js` en `app.js`. |
+| `.env` | Solo si añades backend proxy; plantilla en `.env.example`. |
 
+---
 
+## Cómo ejecutar en local
 
+1. Clona el repo y abre la carpeta **`rst-landing`** en VS Code (**File → Open Folder**).
+2. Copia `config.local.example.js` a **`config.local.js`** y pega tu clave de [Google AI Studio](https://aistudio.google.com/app/apikey).
+3. Ejecuta **Live Server** sobre `index.html` (o `npx serve rst-landing`).
+4. Pulsa **Chat IA**; prueba **ES / EN** y preguntas sobre RST, facturación o filosofía.
 
-Código fuente completo de la carpeta rst-landing/ (o de este repo si la raíz es la carpeta del curso).
+**Importante:** el servidor debe servir **`rst-landing/`** como raíz para que carguen los módulos ES.
 
+### Cuota y modo local
 
+Si Gemini no responde (cuota, red, etc.), el chat usa la base de conocimiento con el prefijo `[Modo local — Gemini no disponible]`.
 
-Este README.md con tecnologías, arquitectura, instrucciones de ejecución y variables.
+---
 
+## Buenas prácticas
 
+- Commits con mensajes claros; ramas `main` / `feature/*` según el equipo.
+- No versionar secretos en `config.sample.js` ni en el README.
+- Revisar contraste y accesibilidad antes de entregar.
 
-No subas config.local.js ni .env con claves (están en .gitignore). Sí sube config.local.example.js y .env.example como plantillas.
+---
 
+## Equipo
 
+- **Julián Esteban Ballesteros Ortiz** — jestebanballestero@ucundinamarca.edu.co  
+- **Juan Diego Walteros Cortés** — jdiegowalteros@ucundinamarca.edu.co  
 
-Cumplimiento con la rúbrica del profesor
-
-1. Integración del chatbot (funcional en el proyecto web)
-
-
-
-
-
-
-
-Requisito
-
-
-
-Evidencia en el proyecto
-
-
-
-
-
-Integrado en el proyecto web
-
-
-
-Widget flotante «Chat IA» (chatbot/chatbot.js + chatbot/chatbot.css), montado desde app.js en #rst-chatbot-root en index.html.
-
-
-
-
-
-Interacción básica con el usuario
-
-
-
-Envío de mensajes, historial de turnos, botón Enviar, indicador de escritura, teclado.
-
-
-
-
-
-Respuestas en español e inglés
-
-
-
-Selector ES / EN en la cabecera del chat; buildSystemPrompt en chatbot/prompt-builder.js fija reglas de idioma; textos de UI bilingües en chatbot.js.
-
-
-
-
-
-Comunicación por interfaz web
-
-
-
-Panel de chat, formulario, accesibilidad básica (aria-*, role="dialog").
-
-
-
-
-
-Funcionamiento en el entorno del proyecto
-
-
-
-Ejecución con Live Server o cualquier servidor estático sobre la carpeta rst-landing; módulos ES6; sin build obligatorio.
-
-2. Tecnologías y herramientas (alineadas a ejemplos del curso / investigación)
-
-
-
-
-
-
-
-Ejemplo del enunciado
-
-
-
-Uso en este proyecto
-
-
-
-
-
-APIs cloud / IA
-
-
-
-Google Gemini API (generativelanguage.googleapis.com): ListModels, generateContent, systemInstruction.
-
-
-
-
-
-JavaScript
-
-
-
-Lógica del cliente, módulos ES, fetch, DOM.
-
-
-
-
-
-HTML5 / CSS3
-
-
-
-index.html semántico, style.css, diseño responsive.
-
-
-
-
-
-Servicios cloud
-
-
-
-Documentación y arquitectura orientadas a AWS en la landing (S3, etc.); la clave se obtiene desde Google AI Studio.
-
-
-
-
-
-Opcionales mencionados (OpenAI, LangChain, Node, React…)
-
-
-
-No son obligatorios; aquí se priorizó vanilla JS + Gemini para claridad y despliegue estático.
-
-3. Declaración Persona Transhumana (visible y/o funcional)
-
-Texto institucional: «Soy LIBRE, AUTÓNOMO Y RESPONSABLE a través del diálogo y la construcción…» y valores: desarrollo humano, ética, autonomía, transformación positiva, bienestar, evolución personal, responsabilidad social.
-
-
-
-
-
-
-
-Forma de integración (enunciado)
-
-
-
-Dónde está
-
-
-
-
-
-Mensaje inicial del chatbot
-
-
-
-Bloque de bienvenida en chatbot/chatbot.js (welcomeTitle, quote, values) en ES/EN.
-
-
-
-
-
-Módulo reflexivo en la conversación
-
-
-
-Botón «Módulo reflexivo» / Reflective prompt que envía una pregunta-guía (autonomía + facturación).
-
-
-
-
-
-Sección informativa del sistema
-
-
-
-Sección **#filosofia** en index.html + estilos .filosofia en style.css.
-
-
-
-
-
-Respuestas contextuales del modelo
-
-
-
-knowledge-base/persona-transhumana.js + instrucciones en chatbot/prompt-builder.js.
-
-
-
-
-
-Componente visual en la interfaz
-
-
-
-Chips de valores (ética, autonomía, etc.) y cita en la landing y en el chat.
-
-
-
-
-
-Filosofía orientadora del proyecto
-
-
-
-README y narrativa del producto (gestión del conocimiento + responsabilidad).
-
-4. README (este archivo) — contenido exigido para GitHub
-
-
-
-
-
-Tecnologías utilizadas: secciones Tecnologías y tabla de la rúbrica arriba.  
-
-
-
-Arquitectura general: sección Arquitectura general más árbol de carpetas.  
-
-
-
-Instrucciones de ejecución: sección Cómo ejecutar en local.  
-
-
-
-Variables de entorno necesarias: sección Variables de entorno y configuración.
-
-5. Video técnico en inglés
-
-Debes explicar técnicamente la implementación en inglés (guion sugerido):
-
-
-
-
-
-Goal: Knowledge-management landing for Colombian RST + DIAN context.
-
-
-
-Stack: HTML5, CSS3, ES modules, Gemini REST API.
-
-
-
-Chat pipeline: chatbot.js (UI, i18n) → prompt-builder.js (system prompt, scope, Persona Transhumana, bilingual rules) → chatbot.service.js (validate key, list text-capable models, generateContent, history trimming) → optional chatbot-fallback.service.js if API fails.
-
-
-
-Knowledge base: knowledge-base/*.js aggregated in index.js.
-
-
-
-Security: API key only in config.local.js (gitignored); production should use a backend proxy.
-
-
-
-Live demo: ES/EN toggle, on-topic question, reflective module, local fallback if quota.
-
-
-
-Arquitectura general
-
-┌─────────────────────────────────────────────────────────────┐
-│  Navegador (Landing RST)                                     │
-│  index.html + style.css                                      │
-│       │                                                      │
-│       ▼                                                      │
-│  app.js (orquestación: scroll, acordeones, formulario…)   │
-│       │                                                      │
-│       ├── components/*.js   (navbar, módulos, contacto…)   │
-│       │                                                      │
-│       └── chatbot/                                           │
-│              chatbot.js  ←→  services/chatbot.service.js     │
-│              prompt-builder.js    chatbot-fallback.service.js│
-│              knowledge-base/index.js                         │
-└─────────────────────────────────────────────────────────────┘
-         │ HTTPS fetch
-         ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Google Gemini API (v1beta)                                    │
-│  GET /models  +  POST …/models/{id}:generateContent           │
-└─────────────────────────────────────────────────────────────┘
-
-
-
-
-
-Frontend único: no hay servidor Node obligatorio; el chat llama a Gemini desde el navegador (adecuado para demo académica; en producción se recomienda proxy para ocultar la clave).  
-
-
-
-Modo local: si la API falla (cuota, red, respuesta vacía, modalidades), chatbot-fallback.service.js responde con reglas y textos de knowledge-base/.
-
-Estructura de carpetas (código fuente)
-
-rst-landing/
-├── index.html              # Landing + sección Persona Transhumana (#filosofia)
-├── style.css
-├── app.js                  # Punto de entrada (ES module)
-├── config.sample.js        # Plantilla sin secretos (versionada)
-├── config.local.example.js # Copia a config.local.js (no subir la copia con clave)
-├── .env.example            # Referencia para futuro backend
-├── .gitignore
-├── README.md               # Este archivo
-├── assets/                 # Imágenes, iconos (placeholders)
-├── components/             # Inits por sección (navbar, módulos, contacto…)
-├── services/             # chatbot.service.js, fallback, contacto, analytics
-├── chatbot/              # UI del widget, prompt-builder, estilos
-└── knowledge-base/       # Textos RST + Persona Transhumana para prompt y fallback
-
-
-
-Tecnologías utilizadas (resumen)
-
-
-
-
-
-HTML5, CSS3, JavaScript (ES modules)  
-
-
-
-Google Gemini API (REST: ListModels, generateContent, systemInstruction)  
-
-
-1. Clona el repositorio o copia la carpeta `rst-landing`.
-2. En VS Code: **File → Open Folder** → selecciona `**rst-landing`**.
-3. Copia `config.local.example.js` → `**config.local.js`** y pega tu clave de [Google AI Studio](https://aistudio.google.com/app/apikey).
-4. Abre `index.html` con **Live Server** (o `npx serve rst-landing`).
-5. Usa el botón **«Chat IA»**; prueba **ES / EN** y preguntas sobre RST / facturación / filosofía.
-
-Fuentes: Syne, DM Sans, JetBrains Mono (Google Fonts)  
-
-
-
-Control de versiones: Git + .gitignore para secretos y artefactos
-
-
-
-Variables de entorno y configuración
-
-Frontend (obligatorio para probar el chat con Gemini)
-
-
-
-
-Proyecto académico — Gestión del Conocimiento y fundamentos de deep learning (integración de chatbot e IA en la web).
+**Universidad de Cundinamarca** — Proyecto académico (Gestión del Conocimiento y deep learning / chatbot en la web).
