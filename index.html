@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema RST — Gestión tributaria y facturación electrónica</title>
+    <meta
+      name="description"
+      content="Landing del sistema de gestión y documentación bajo el Régimen Simple de Tributación (RST) para empresarios colombianos, alineado con estándares DIAN."
+    />
+    <meta property="og:title" content="Sistema RST — Universidad de Cundinamarca" />
+    <meta
+      property="og:description"
+      content="Facturación electrónica, seguridad y gestión del conocimiento tributario con enfoque ético y autonomía responsable."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;600&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="chatbot/chatbot.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header id="navbar">
+      <div class="container nav-inner">
+        <a class="nav-brand" href="#home" aria-label="Inicio Sistema RST">
+          <svg width="36" height="36" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGradNav" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#1A6FE8" />
+                <stop offset="1" stop-color="#00C896" />
+              </linearGradient>
+            </defs>
+            <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#logoGradNav)" />
+            <path
+              d="M18 42V22h8l6 14 6-14h8v20h-7V30l-7 16h-4L25 30v12h-7z"
+              fill="#fff"
+              opacity="0.95"
+            />
+          </svg>
+          <span>Sistema RST</span>
+        </a>
+        <nav class="nav-links" aria-label="Secciones principales">
+          <a href="#home">Inicio</a>
+          <a href="#filosofia">Filosofía</a>
+          <a href="#problematica">Problemática</a>
+          <a href="#solucion">Solución</a>
+          <a href="#modulos">Módulos</a>
+          <a href="#arquitectura">Arquitectura</a>
+          <a href="#seguridad">Seguridad</a>
+          <a href="#metodologia">Metodología</a>
+          <a href="#tecnologias">Tecnologías</a>
+          <a href="#cronograma">Cronograma</a>
+          <a href="#viabilidad">Viabilidad</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#evidencias">Evidencias</a>
+          <a href="#github">GitHub</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="nav-burger"
+            type="button"
+            id="nav-burger"
+            aria-controls="nav-drawer"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <a class="btn btn--primary nav-cta" href="#contacto">Solicitar Demo</a>
+        </div>
+      </div>
+      <div id="nav-backdrop" class="nav-drawer__backdrop" aria-hidden="true"></div>
+      <nav id="nav-drawer" class="nav-drawer" aria-label="Menú móvil" aria-hidden="true">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem">
+          <span class="nav-brand" style="font-size: 1rem">Menú</span>
+          <button type="button" class="nav-burger" id="nav-close" aria-label="Cerrar menú">✕</button>
+        </div>
+        <a href="#home">Inicio</a>
+        <a href="#filosofia">Filosofía</a>
+        <a href="#problematica">Problemática</a>
+        <a href="#solucion">Solución</a>
+        <a href="#modulos">Módulos</a>
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#seguridad">Seguridad</a>
+        <a href="#metodologia">Metodología</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#cronograma">Cronograma</a>
+        <a href="#viabilidad">Viabilidad</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#evidencias">Evidencias</a>
+        <a href="#github">GitHub</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main id="home" class="hero">
+      <div class="hero__orb hero__orb--a" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--b" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div data-reveal>
+          <div class="pill-row" aria-label="Badges de valor">
+            <span class="pill">✅ Cumple DIAN</span>
+            <span class="pill">🔒 Datos seguros</span>
+            <span class="pill">⚡ Automatización RST</span>
+          </div>
+          <h1>Gestión tributaria y facturación electrónica para el RST</h1>
+          <p class="section__lead" style="margin: 0 0 1rem">
+            Desde la expansión de la facturación electrónica en Colombia (2019–presente), los empresarios del
+            <strong>Régimen Simple de Tributación (RST)</strong> requieren herramientas claras, seguras y
+            accesibles. Este proyecto integra <strong>gestión del conocimiento</strong>, automatización y una
+            experiencia web moderna.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.65rem">
+            <a class="btn btn--primary" href="#evidencias">Ver Demo</a>
+            <a class="btn btn--outline" href="#solucion">Conocer el sistema</a>
+          </div>
+          <div class="kpi" style="margin-top: 1.25rem">
+            <div class="box">
+              <div class="num"><span data-stat data-target="120">0</span>+</div>
+              <div style="font-size: 0.78rem; color: var(--gray-600)">Empresas orientadas (meta)</div>
+            </div>
+            <div class="box">
+              <div class="num"><span data-stat data-target="48">0</span>k</div>
+              <div style="font-size: 0.78rem; color: var(--gray-600)">Documentos gestionados (meta)</div>
+            </div>
+            <div class="box">
+              <div class="num"><span data-stat data-target="35">0</span>%</div>
+              <div style="font-size: 0.78rem; color: var(--gray-600)">Reducción de errores (objetivo)</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-mock" data-reveal aria-label="Mockup ilustrativo del dashboard">
+          <div class="hero-mock__top">
+            <span class="dot" style="background: #fb7185"></span>
+            <span class="dot" style="background: #fbbf24"></span>
+            <span class="dot" style="background: #34d399"></span>
+            <span class="mono" style="margin-left: auto; color: var(--gray-600)">dashboard.rst.app</span>
+          </div>
+          <div class="hero-mock__body">
+            <div class="mono" style="color: var(--gray-600)">POST /api/v1/invoices · 201 Created</div>
+            <div style="height: 120px; border-radius: 12px; background: linear-gradient(135deg, #e2e8f0, #fff); border: 1px solid var(--gray-200)"></div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem">
+              <div style="height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--gray-200)"></div>
+              <div style="height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--gray-200)"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FILOSOFÍA PERSONA TRANSHUMANA -->
+    <section id="filosofia" class="section filosofia">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Filosofía orientadora del proyecto</p>
+        <h2 class="section__title">Persona Transhumana y gestión responsable del conocimiento</h2>
+        <p class="section__lead">
+          Este sitio y el asistente conversacional incorporan la declaración institucional como brújula ética:
+          autonomía con responsabilidad, diálogo y construcción colectiva del saber tributario.
+        </p>
+        <blockquote class="quote-block">
+          «Soy <strong>LIBRE</strong>, <strong>AUTÓNOMO</strong> y <strong>RESPONSABLE</strong> a través del diálogo y la
+          construcción, como ideal regulativo; me dirijo, controlo y dicto mis propias leyes.»
+          <cite>Universidad de Cundinamarca — enfoque transhumano en educación y tecnología.</cite>
+        </blockquote>
+        <div class="value-chips" aria-label="Valores relacionados">
+          <span class="chip">Desarrollo humano</span>
+          <span class="chip">Ética</span>
+          <span class="chip">Autonomía</span>
+          <span class="chip">Transformación positiva</span>
+          <span class="chip">Bienestar</span>
+          <span class="chip">Evolución personal</span>
+          <span class="chip">Responsabilidad social</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMÁTICA -->
+    <section id="problematica" class="section">
+      <div class="container grid-2">
+        <div data-reveal>
+          <p class="section__eyebrow">Problemática</p>
+          <h2 class="section__title">Retos reales del cumplimiento RST</h2>
+          <p class="section__lead">
+            Ilustración conceptual: barras y nodos que representan fricción administrativa y dispersión de
+            información.
+          </p>
+          <div style="border-radius: 16px; border: 1px solid var(--gray-200); min-height: 260px; background: radial-gradient(circle at 30% 20%, rgba(26,111,232,0.18), transparent 45%), radial-gradient(circle at 80% 70%, rgba(0,200,150,0.16), transparent 40%), #fff"></div>
+        </div>
+        <div data-reveal>
+          <article class="card" style="margin-bottom: 0.75rem">
+            <h3>📋 Procesos manuales</h3>
+            <p style="margin: 0.35rem 0 0; color: var(--gray-600)">
+              Planillas y validaciones a mano incrementan errores en campos críticos del XML.
+            </p>
+          </article>
+          <article class="card" style="margin-bottom: 0.75rem">
+            <h3>📉 Desconocimiento normativo</h3>
+            <p style="margin: 0.35rem 0 0; color: var(--gray-600)">
+              Resoluciones y tablas RST cambian; sin educación continua, el empresario opera con incertidumbre.
+            </p>
+          </article>
+          <article class="card" style="margin-bottom: 0.75rem">
+            <h3>⏱️ Tiempo documental</h3>
+            <p style="margin: 0.35rem 0 0; color: var(--gray-600)">
+              Búsqueda de soportes y conciliaciones consume horas que podrían destinarse al negocio.
+            </p>
+          </article>
+          <article class="card" style="margin-bottom: 0.75rem">
+            <h3>💸 Riesgo de sanciones</h3>
+            <p style="margin: 0.35rem 0 0; color: var(--gray-600)">
+              Inconsistencias entre libros y factura electrónica pueden generar observaciones DIAN.
+            </p>
+          </article>
+          <article class="card">
+            <h3>🔧 Herramientas poco accesibles</h3>
+            <p style="margin: 0.35rem 0 0; color: var(--gray-600)">
+              Soluciones costosas o complejas excluyen micronegocios que también deben cumplir.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUCIÓN -->
+    <section id="solucion" class="section section--dark">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Solución propuesta</p>
+        <h2 class="section__title">Automatización con trazabilidad y seguridad</h2>
+        <p class="section__lead">
+          Un flujo claro desde la captura de datos hasta el archivo en nube, con validaciones y reportes.
+        </p>
+        <div class="grid-3" style="margin-top: 1rem">
+          <div class="card">
+            <h3>⚡ XML validado</h3>
+            <p style="color: #cbd5e1; margin: 0.35rem 0 0">Plantillas alineadas a XSD y controles de consistencia.</p>
+          </div>
+          <div class="card">
+            <h3>🔄 RST automatizado</h3>
+            <p style="color: #cbd5e1; margin: 0.35rem 0 0">Tablas, calendario y recordatorios orientados al usuario.</p>
+          </div>
+          <div class="card">
+            <h3>☁️ Nube AWS</h3>
+            <p style="color: #cbd5e1; margin: 0.35rem 0 0">Respaldo, cifrado y escalabilidad modular.</p>
+          </div>
+        </div>
+        <div class="flow" aria-label="Flujo del sistema">
+          <div class="flow-step"><strong>1</strong> Captura guiada</div>
+          <div class="flow-step"><strong>2</strong> Validación local</div>
+          <div class="flow-step"><strong>3</strong> Firma digital</div>
+          <div class="flow-step"><strong>4</strong> Repositorio</div>
+          <div class="flow-step"><strong>5</strong> Reportes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÓDULOS -->
+    <section id="modulos" class="section">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Módulos del sistema</p>
+        <h2 class="section__title">Diez pilares funcionales</h2>
+        <p class="section__lead">Cada módulo se describe con beneficios, tecnologías y un caso de uso.</p>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>🧾 Facturación electrónica</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Emisión controlada con plantillas UBL/DIAN y trazabilidad de eventos.</p>
+            <div class="tags"><span class="tag">XML</span><span class="tag">Node.js</span><span class="tag">Validación</span></div>
+            <p><strong>Caso de uso:</strong> ferretería con alto volumen de ventas diarias.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>📊 Gestión tributaria RST</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Cálculos y tablas según ingresos; educación contextual para autonomía informada.</p>
+            <div class="tags"><span class="tag">MySQL</span><span class="tag">Reportes</span></div>
+            <p><strong>Caso de uso:</strong> PYME de servicios con múltiples responsables.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>📁 Gestión documental</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Índices, versiones y búsqueda rápida de soportes y facturas.</p>
+            <div class="tags"><span class="tag">S3</span><span class="tag">Metadatos</span></div>
+            <p><strong>Caso de uso:</strong> auditoría interna mensual.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>👥 Gestión de clientes</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>CRM ligero con datos tributarios clave y consentimiento explícito.</p>
+            <div class="tags"><span class="tag">API REST</span><span class="tag">Privacidad</span></div>
+            <p><strong>Caso de uso:</strong> cartera recurrente de contratos.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>📄 Generación XML</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Serialización, namespaces y pruebas contra esquemas oficiales.</p>
+            <div class="tags"><span class="tag">XSD</span><span class="tag">Tests</span></div>
+            <p><strong>Caso de uso:</strong> lote nocturno de facturas.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>✍️ Firma digital</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Integración PKI con certificados X.509 y sellado de tiempo cuando aplique.</p>
+            <div class="tags"><span class="tag">PKI</span><span class="tag">KMS</span></div>
+            <p><strong>Caso de uso:</strong> factura con firma coherente ante validador.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>🔐 Seguridad y cifrado</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Defensa en profundidad: TLS, AES-256, RBAC y JWT.</p>
+            <div class="tags"><span class="tag">TLS 1.3</span><span class="tag">bcrypt</span></div>
+            <p><strong>Caso de uso:</strong> roles separados contador/admin.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>📑 Reportes tributarios</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Exportaciones CSV/PDF y paneles de cumplimiento.</p>
+            <div class="tags"><span class="tag">Dashboards</span></div>
+            <p><strong>Caso de uso:</strong> cierre de periodo.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>☁️ Almacenamiento en la nube</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>S3 con políticas de acceso y versionado; integración futura con pipelines.</p>
+            <div class="tags"><span class="tag">AWS</span></div>
+            <p><strong>Caso de uso:</strong> respaldo inmutable de XML firmados.</p>
+          </div>
+        </div>
+
+        <div data-accordion class="module-card">
+          <button type="button" data-accordion-toggle aria-expanded="false">
+            <span>🔗 Integración DIAN (futura)</span><span class="chev">▾</span>
+          </button>
+          <div data-accordion-panel hidden>
+            <p>Conectores para validación y eventos oficiales cuando el modelo lo permita.</p>
+            <div class="tags"><span class="tag">Roadmap</span></div>
+            <p><strong>Caso de uso:</strong> envío validado con reintentos idempotentes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARQUITECTURA -->
+    <section id="arquitectura" class="section">
+      <div class="container grid-2">
+        <div data-reveal>
+          <p class="section__eyebrow">Arquitectura</p>
+          <h2 class="section__title">Tres capas, contratos claros</h2>
+          <p class="section__lead">
+            Frontend web, backend Express y persistencia MySQL + objetos en S3. APIs REST JSON/XML documentadas en
+            OpenAPI (pendiente de publicación).
+          </p>
+          <div class="card">
+            <h3 class="mono">Escalabilidad</h3>
+            <p style="margin: 0.35rem 0 0; color: var(--gray-600)">
+              Módulos desacoplados para evolucionar a microservicios por dominio (facturación, identidad, reportes).
+            </p>
+          </div>
+        </div>
+        <div data-reveal class="section section--dark" style="padding: 1.25rem; border-radius: 18px">
+          <div class="layer-stack" aria-label="Diagrama de capas">
+            <div class="layer">
+              <h3>Capa 1 · Frontend</h3>
+              <p class="mono" style="color: #cbd5e1; margin: 0">HTML5 · CSS3 · JavaScript</p>
+            </div>
+            <div class="connector">API REST · JSON/XML</div>
+            <div class="layer">
+              <h3>Capa 2 · Backend</h3>
+              <p class="mono" style="color: #cbd5e1; margin: 0">Node.js · Express · Auth · Facturación</p>
+            </div>
+            <div class="connector">ORM / Queries</div>
+            <div class="layer">
+              <h3>Capa 3 · Datos</h3>
+              <p class="mono" style="color: #cbd5e1; margin: 0">MySQL · AWS S3 · KMS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEGURIDAD -->
+    <section id="seguridad" class="section section--dark">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Seguridad informática</p>
+        <h2 class="section__title">Protección de extremo a extremo</h2>
+        <p class="section__lead">Nueve pilares técnicos alineados a buenas prácticas OWASP y operación en nube.</p>
+        <div class="badge" style="margin-bottom: 1rem">🛡️ Nivel de seguridad bancaria (objetivo de diseño)</div>
+        <div class="grid-3">
+          <div class="card"><h3>TLS 1.2 / 1.3</h3><p style="color: #cbd5e1">Cifrado en tránsito en todos los canales.</p></div>
+          <div class="card"><h3>Cifrado en reposo</h3><p style="color: #cbd5e1">AES-256 para volúmenes y snapshots.</p></div>
+          <div class="card"><h3>AWS KMS</h3><p style="color: #cbd5e1">Gestión de claves y rotación controlada.</p></div>
+          <div class="card"><h3>Protección financiera</h3><p style="color: #cbd5e1">Validación y sanitización de entradas.</p></div>
+          <div class="card"><h3>PKI / Firma digital</h3><p style="color: #cbd5e1">Certificados X.509 y firma XML.</p></div>
+          <div class="card"><h3>Control de acceso</h3><p style="color: #cbd5e1">RBAC, JWT y sesiones endurecidas.</p></div>
+          <div class="card"><h3>Protección XML</h3><p style="color: #cbd5e1">Validación contra XSD DIAN.</p></div>
+          <div class="card"><h3>Credenciales</h3><p style="color: #cbd5e1">Variables de entorno y hash bcrypt.</p></div>
+          <div class="card"><h3>Backups</h3><p style="color: #cbd5e1">Snapshots RDS programados.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METODOLOGÍA -->
+    <section id="metodologia" class="section">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Metodología</p>
+        <h2 class="section__title">XP, Scrum y CI/CD</h2>
+        <p class="section__lead">
+          Combinamos prácticas de Extreme Programming (TDD, pair programming) con Scrum (sprints de 2 semanas) y
+          GitHub Actions para integración continua.
+        </p>
+        <div class="timeline" aria-label="Roadmap de sprints">
+          <div class="tl-item"><strong>Sprint 1</strong>Diseño</div>
+          <div class="tl-item"><strong>Sprint 2</strong>Backend</div>
+          <div class="tl-item"><strong>Sprint 3</strong>Frontend</div>
+          <div class="tl-item"><strong>Sprint 4</strong>Integración</div>
+          <div class="tl-item"><strong>Sprint 5</strong>Testing</div>
+          <div class="tl-item"><strong>Sprint 6</strong>Deploy</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECNOLOGÍAS -->
+    <section id="tecnologias" class="section section--dark">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Stack</p>
+        <h2 class="section__title">Tecnologías utilizadas</h2>
+        <div class="grid-3" style="margin-top: 1rem">
+          <div class="tech"><div class="logo">H5</div><h3>HTML5</h3><p style="color: #cbd5e1; margin: 0">Estructura semántica.</p></div>
+          <div class="tech"><div class="logo">C3</div><h3>CSS3</h3><p style="color: #cbd5e1; margin: 0">Animaciones y responsive.</p></div>
+          <div class="tech"><div class="logo">JS</div><h3>JavaScript</h3><p style="color: #cbd5e1; margin: 0">Interactividad y chatbot.</p></div>
+          <div class="tech"><div class="logo">N</div><h3>Node.js</h3><p style="color: #cbd5e1; margin: 0">Runtime backend.</p></div>
+          <div class="tech"><div class="logo">Ex</div><h3>Express.js</h3><p style="color: #cbd5e1; margin: 0">API REST.</p></div>
+          <div class="tech"><div class="logo">SQL</div><h3>MySQL</h3><p style="color: #cbd5e1; margin: 0">Modelo relacional.</p></div>
+          <div class="tech"><div class="logo">X</div><h3>XML</h3><p style="color: #cbd5e1; margin: 0">Facturación electrónica.</p></div>
+          <div class="tech"><div class="logo">AWS</div><h3>AWS</h3><p style="color: #cbd5e1; margin: 0">S3, EC2, KMS, RDS.</p></div>
+          <div class="tech"><div class="logo">GH</div><h3>GitHub</h3><p style="color: #cbd5e1; margin: 0">Control de versiones y CI/CD.</p></div>
+          <div class="tech"><div class="logo">API</div><h3>APIs REST</h3><p style="color: #cbd5e1; margin: 0">Integración modular.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRONOGRAMA -->
+    <section id="cronograma" class="section">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Cronograma</p>
+        <h2 class="section__title">14 semanas base</h2>
+        <div class="gantt" aria-label="Cronograma por fases">
+          <div class="gantt-row"><strong>Semanas 1-2</strong><div><div class="gantt-bar" style="width: 40%"></div><div class="mono" style="margin-top:0.35rem;color:var(--gray-600)">Investigación RST / DIAN</div></div></div>
+          <div class="gantt-row"><strong>Semanas 3-4</strong><div><div class="gantt-bar" style="width: 45%"></div><div class="mono" style="margin-top:0.35rem;color:var(--gray-600)">Diseño UX y arquitectura DB</div></div></div>
+          <div class="gantt-row"><strong>Semanas 5-10</strong><div><div class="gantt-bar" style="width: 85%"></div><div class="mono" style="margin-top:0.35rem;color:var(--gray-600)">Desarrollo FE/BE/BD</div></div></div>
+          <div class="gantt-row"><strong>Semanas 11-12</strong><div><div class="gantt-bar" style="width: 55%"></div><div class="mono" style="margin-top:0.35rem;color:var(--gray-600)">Pruebas integradas</div></div></div>
+          <div class="gantt-row"><strong>Semana 13</strong><div><div class="gantt-bar" style="width: 35%"></div><div class="mono" style="margin-top:0.35rem;color:var(--gray-600)">Deploy AWS</div></div></div>
+          <div class="gantt-row"><strong>Semana 14+</strong><div><div class="gantt-bar" style="width: 30%"></div><div class="mono" style="margin-top:0.35rem;color:var(--gray-600)">Optimización continua</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIABILIDAD -->
+    <section id="viabilidad" class="section section--dark">
+      <div class="container grid-3" data-reveal>
+        <div>
+          <h2 class="section__title" style="font-size: 1.4rem">Viabilidad técnica</h2>
+          <p style="color: #cbd5e1">Stack maduro, documentación abundante y arquitectura modular.</p>
+        </div>
+        <div>
+          <h2 class="section__title" style="font-size: 1.4rem">Viabilidad económica</h2>
+          <p style="color: #cbd5e1">Modelo SaaS por empresa; costos AWS iniciales estimados $50–100/mes.</p>
+        </div>
+        <div>
+          <h2 class="section__title" style="font-size: 1.4rem">Beneficios empresariales</h2>
+          <p style="color: #cbd5e1">Menos errores, más tiempo útil y cumplimiento transparente.</p>
+        </div>
+      </div>
+      <div class="container" data-reveal style="margin-top: 1.5rem">
+        <div class="card" style="background: rgba(17,30,53,0.72); color: #e2e8f0; border-color: rgba(148,163,184,0.22)">
+          <h3 style="margin-top: 0">Planes (referencia)</h3>
+          <ul style="margin: 0; padding-left: 1.1rem; color: #cbd5e1">
+            <li>Básico: 1–5 usuarios</li>
+            <li>Profesional: hasta 20 usuarios</li>
+            <li>Empresarial: ilimitado + soporte</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPO -->
+    <section id="equipo" class="section">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Equipo</p>
+        <h2 class="section__title">Quienes construyen el sistema</h2>
+        <div class="grid-2" style="margin-top: 1rem">
+          <article class="card">
+            <div style="display: flex; gap: 1rem; align-items: flex-start">
+              <div style="width: 72px; height: 72px; border-radius: 16px; background: linear-gradient(135deg,#1a6fe8,#00c896); display:grid; place-items:center; color:#fff; font-family:'Syne',sans-serif; font-weight:800">JEBO</div>
+              <div>
+                <h3 style="margin: 0">Julián Esteban Ballesteros Ortiz</h3>
+                <p class="mono" style="margin: 0.25rem 0; color: var(--gray-600)">jestebanballestero@ucundinamarca.edu.co · 313 448 8311</p>
+                <p style="margin: 0; color: var(--gray-600)">
+                  <strong>Rol:</strong> Desarrollador Full Stack &amp; Arquitecto del Sistema.<br />
+                  Backend, seguridad, integración cloud y XML tributario.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div style="display: flex; gap: 1rem; align-items: flex-start">
+              <div style="width: 72px; height: 72px; border-radius: 16px; background: linear-gradient(135deg,#111e35,#4a90e2); display:grid; place-items:center; color:#fff; font-family:'Syne',sans-serif; font-weight:800">JDWC</div>
+              <div>
+                <h3 style="margin: 0">Juan Diego Walteros Cortés</h3>
+                <p class="mono" style="margin: 0.25rem 0; color: var(--gray-600)">jdiegowalteros@ucundinamarca.edu.co · 321 256 1387</p>
+                <p style="margin: 0; color: var(--gray-600)">
+                  <strong>Rol:</strong> Desarrollador Frontend &amp; UX/UI.<br />
+                  Diseño visual, documentación técnica e integración del asistente IA (Gemini).
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVIDENCIAS -->
+    <section id="evidencias" class="section section--dark">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Evidencias</p>
+        <h2 class="section__title">Demostración y artefactos</h2>
+        <p class="section__lead">Placeholders listos para reemplazar con capturas reales de sprints.</p>
+        <div class="evidence-tabs" role="tablist" aria-label="Tipo de evidencia">
+          <button type="button" data-evidence-tab="capturas" class="is-active">Capturas</button>
+          <button type="button" data-evidence-tab="mockups">Mockups</button>
+          <button type="button" data-evidence-tab="db">Base de datos</button>
+          <button type="button" data-evidence-tab="xml">XML</button>
+          <button type="button" data-evidence-tab="api">API</button>
+        </div>
+        <div data-evidence-panel="capturas" class="evidence-panel is-active">
+          <div class="grid-3">
+            <div class="placeholder-tile">Captura dashboard</div>
+            <div class="placeholder-tile">Captura módulo facturación</div>
+            <div class="placeholder-tile">Captura reportes</div>
+          </div>
+        </div>
+        <div data-evidence-panel="mockups" class="evidence-panel">
+          <div class="placeholder-tile">Wireframes Figma / FigJam</div>
+        </div>
+        <div data-evidence-panel="db" class="evidence-panel">
+          <div class="placeholder-tile">Esquema ER MySQL</div>
+        </div>
+        <div data-evidence-panel="xml" class="evidence-panel">
+          <div class="placeholder-tile">Ejemplo XML UBL (sin datos reales)</div>
+        </div>
+        <div data-evidence-panel="api" class="evidence-panel">
+          <div class="placeholder-tile">Screenshot Postman / Insomnia</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GITHUB -->
+    <section id="github" class="section">
+      <div class="container" data-reveal>
+        <p class="section__eyebrow">Repositorio</p>
+        <h2 class="section__title">Flujo Git profesional</h2>
+        <div class="card">
+          <p style="margin-top: 0; color: var(--gray-600)">
+            Ramas <span class="mono">main</span> (producción), <span class="mono">develop</span> (integración),
+            <span class="mono">feature/*</span> y <span class="mono">hotfix/*</span>. Pull requests revisados,
+            Conventional Commits y GitHub Actions para CI/CD.
+          </p>
+          <a class="btn btn--outline" href="https://github.com/" rel="noreferrer" target="_blank">Abrir GitHub (enlace ejemplo)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section--dark">
+      <div class="container grid-2">
+        <div data-reveal>
+          <p class="section__eyebrow">Contacto</p>
+          <h2 class="section__title">Hablemos de tu migración al RST</h2>
+          <p class="section__lead">
+            Universidad de Cundinamarca · Proyecto académico de gestión del conocimiento y deep learning (chatbot).
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0; color: #cbd5e1">
+            <li>📧 jestebanballestero@ucundinamarca.edu.co</li>
+            <li>📧 jdiegowalteros@ucundinamarca.edu.co</li>
+            <li>📱 313 448 8311 / 321 256 1387</li>
+          </ul>
+        </div>
+        <form id="contact-form" class="card" data-reveal style="background: rgba(17,30,53,0.72); border-color: rgba(148,163,184,0.22); color: #e2e8f0">
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+          <p data-contact-feedback style="margin-top: 0.75rem; color: #a5f3fc" hidden></p>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between">
+        <div>
+          <div class="nav-brand" style="color: #fff">
+            <span>Sistema RST</span>
+          </div>
+          <p style="max-width: 48ch; margin: 0.5rem 0 0; color: #94a3b8">
+            Proyecto de gestión del conocimiento con asistente bilingüe (ES/EN) y filosofía Persona Transhumana.
+          </p>
+        </div>
+        <div class="mono" style="font-size: 0.85rem">
+          <a href="#filosofia">Filosofía</a> ·
+          <a href="#github">GitHub</a> ·
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="rst-chatbot-root"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("[data-reveal]").forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+      });
+    </script>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
